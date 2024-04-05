@@ -1,0 +1,3 @@
+project/*
+!project/plugin.sbt
+.vscode/

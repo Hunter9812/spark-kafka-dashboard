@@ -1,0 +1,44 @@
+# intermediates files or directories
+.swp
+.log
+logs/
+
+# archives files
+.bak
+.7z
+.jar
+.rar
+.zip
+.gz
+.gzip
+.tgz
+
+# scala
+.bloop/
+.bsp/
+.metals/
+
+# node
+node_modules/
+dist/
+
+# python
+__pycache__/
+.ipynb_checkpoints/
+
+# virtualenv
+pyvenv.cfg
+.venv
+
+# idea
+.idea/
+target/
+out/
+
+# vscode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/*.code-snippets
