@@ -1,7 +1,12 @@
 package com.example
 
 import java.util.Properties
-import org.apache.kafka.clients.producer.{KafkaProducer, ProducerRecord}
+import org.apache.kafka.clients.producer.{
+  Callback,
+  KafkaProducer,
+  ProducerRecord,
+  RecordMetadata
+}
 
 object KafkaProducerTest {
   def main(args: Array[String]): Unit = {
@@ -26,7 +31,21 @@ object KafkaProducerTest {
         val message = s"Message $i" // 要发送的消息内容
         val record =
           new ProducerRecord[String, String](topic, message) // 创建消息记录
-        producer.send(record) // 发送消息
+        producer.send(
+          record,
+          new Callback {
+            override def onCompletion(
+                metadata: RecordMetadata,
+                exception: Exception
+            ): Unit = {
+              if (exception != null) {
+                println("消息发送失败：" + exception.getMessage)
+              } else {
+                println("消息发送成功，消息偏移量：" + metadata.offset())
+              }
+            }
+          }
+        ) // 发送消息
         println(s"Sent message: $message")
         Thread.sleep(1000) // 休眠1秒
       }

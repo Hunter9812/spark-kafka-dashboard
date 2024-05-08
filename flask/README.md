@@ -1,4 +1,5 @@
 # 项目结构
+
 - data目录存放的是用户日志数据；
 
   数据集压缩包为[data_format.zip](https://pan.baidu.com/s/1cs02Nc),该数据集压缩包是淘宝2015年双11前6个月(包含双11)的交易数据(交易数据有偏移，但是不影响实验的结果)，里面包含3个文件，分别是用户行为日志文件user_log.csv 、回头客训练集train.csv 、回头客测试集test.csv. 在这个案例中只是用user_log.csv这个文件，下面列出文件user_log.csv的数据格式定义：

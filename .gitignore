@@ -13,11 +13,6 @@ logs/
 .gzip
 .tgz
 
-# scala
-.bloop/
-.bsp/
-.metals/
-
 # node
 node_modules/
 dist/
@@ -34,6 +29,9 @@ pyvenv.cfg
 .idea/
 target/
 out/
+*.iws
+*.iml
+*.ipr
 
 # vscode
 .vscode/*

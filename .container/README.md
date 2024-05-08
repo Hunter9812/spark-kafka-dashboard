@@ -1,14 +1,3 @@
-# 解释
-这是一个[github的项目](https://github.com/Marcel-Jan/docker-hadoop-spark)，整合了hadoop、spark、hive的docker环境，其他都正常，就是hive不会自动启动。
-
-我clone了这个项目，并修改了docker-compose.yml文件，编排了kafka的服务(这部分是copy的[kafka官方docker的例子](https://github.com/apache/kafka/blob/trunk/docker/examples/jvm/single-node/plaintext/docker-compose.yml))。
-
-## docker-compose.yml
-我设置了Volumes，在用户家目录下，你可以在`~/docker/spark/`下看到spark容器中的root目录，其中有一个work目录它是spark的work目录
-
-快速启动就是`docker-compose up`
-
-
 [![Gitter chat](https://badges.gitter.im/gitterHQ/gitter.png)](https://gitter.im/big-data-europe/Lobby)
 
 # Docker multi-container environment with Hadoop, Spark and Hive

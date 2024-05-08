@@ -1,4 +1,4 @@
-package org.apache.spark.examples.streaming
+package com.example
 
 import java.util.HashMap
 import org.apache.kafka.clients.producer.{

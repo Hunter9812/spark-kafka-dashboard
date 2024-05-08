@@ -10,7 +10,7 @@ app.config['SECRET_KEY'] = 'secret!'
 socketio = SocketIO(app)
 thread = None
 # 实例化一个consumer，接收topic为result的消息
-consumer = KafkaConsumer('result')
+consumer = KafkaConsumer('result', api_version=(3, 7, 0))
 
 
 # 一个后台线程，持续接收Kafka消息，并发送给客户端浏览器
@@ -43,7 +43,7 @@ def connect(message):
     socketio.emit('connected', {'data': 'Connected'})
 
 
-# 通过访问http://127.0.0.1:5000/访问index.html
+# 主页 http://127.0.0.1:5000/
 @app.route("/")
 def handle_mes():
     return render_template("index.html")

@@ -1,3 +1,6 @@
+.bloop/
+.bsp/
+.metals/
+null/
 project/*
 !project/plugin.sbt
-.vscode/
