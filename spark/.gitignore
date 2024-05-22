@@ -4,3 +4,4 @@
 null/
 project/*
 !project/plugin.sbt
+.scalafmt.conf

@@ -25,5 +25,5 @@ with open(here / "../data/user_log.csv", "r", encoding="utf-8") as csvfile:
             continue  # 去除第一行表头
         time.sleep(0.1)  # 每隔0.1秒发送一行数据
         # 发送数据，topic为'sex'
-        print(gender)
+        # print(gender)
         producer.send("sex", gender.encode("utf8"))

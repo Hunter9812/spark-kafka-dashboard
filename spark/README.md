@@ -14,7 +14,11 @@
 
 - 问题
 
-  - 依赖问题
+  - sbt镜像
+
+    参看这篇文章：[sbt1.4.4配置国内镜像源实操教程（无痛入门）](https://blog.csdn.net/a772304419/article/details/111053781)
+
+  - 依赖
 
     ```bash
     sbt:Simple Project> compile
@@ -30,7 +34,7 @@
     - [audience-annotations](https://mvnrepository.com/artifact/org.apache.yetus/audience-annotations)
     - [slf4j-api](https://mvnrepository.com/artifact/org.slf4j/slf4j-api)
 
-  - 运行时问题
+  - 运行时缺少依赖
 
     防止运行时因为依赖出现问题，加载一个 sbt 的[plugin](https://www.scala-sbt.org/1.x/docs/Using-Plugins.html)：[sbt-assembly](https://github.com/sbt/sbt-assembly)
 
@@ -51,11 +55,11 @@
 - 打包
 
   ```bash
-  #assembly插件
+  # assembly插件
   sbt assembly
   ```
 
-- 复制 jar 包和脚本到 spark 家目录
+- 复制 jar 包和脚本到 spark 家目录（linux需要使用sudo）
 
   ```bash
   cp ./target/scala-2.12/simple-project-assembly-1.0.jar ~/docker/spark/
