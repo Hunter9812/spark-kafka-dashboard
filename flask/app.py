@@ -28,14 +28,14 @@ def background_thread():
             else:
                 continue
         result = str(girl) + ',' + str(boy)
-        print(result)
+        # print(result)
         socketio.emit('test_message', {'data': result})
 
 
 # 客户端发送connect事件时的处理函数
 @socketio.on('test_connect')
 def connect(message):
-    print(message)
+    # print(message)
     global thread
     if thread is None:
         # 单独开启一个线程给客户端发送数据
@@ -48,6 +48,10 @@ def connect(message):
 def handle_mes():
     return render_template("index.html")
 
+
+@app.route("/<page>.html")
+def handle_page(page):
+    return render_template(f"pages/{page}.html")
 
 # main函数
 if __name__ == '__main__':

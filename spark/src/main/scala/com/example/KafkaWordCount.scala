@@ -48,7 +48,6 @@ object KafkaWordCount {
     val producer = new KafkaProducer[String, String](props)
 
     // todo 创建数据
-    // rdd.colect即将rdd中数据转化为数组，然后write函数将rdd内容转化为json格式
     val str = jsonstring
     // public ProducerRecord(String topic, K key, V value) {
     val message = new ProducerRecord[String, String]("result", null, str)
